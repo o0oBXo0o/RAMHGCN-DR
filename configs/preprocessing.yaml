@@ -1,0 +1,34 @@
+project:
+  seed: 42
+
+preprocessing:
+  output_dir: outputs/main_inputs
+  relation_order: [DD, DGD, DPD, DCD]
+  drug_atom_aggregation: mean
+  hpo_feature_type: information_content
+  hpo_l2_normalize: true
+  distinct_pathway_genes: true
+  distinct_complex_genes: false
+
+  inputs:
+    direct_drug_disease: data/raw/associations/direct_drug_disease.csv
+    drug_targets: data/raw/associations/drug_targets.tsv
+    phenotype_genes: data/raw/associations/phenotype_genes.tsv
+    pathway_genes: data/raw/associations/pathway_genes.tsv
+    protein_complex_genes: data/raw/associations/protein_complex_genes.tsv
+    drug_smiles: data/raw/features/drug_connectivity_smiles.tsv
+    diseases: data/raw/entities/diseases.tsv
+    hpo_annotations: data/raw/features/phenotype_annotations.hpoa
+
+  expected_nodes:
+    drugs: 492
+    diseases: 201
+  expected_feature_dimensions:
+    drug: 109
+    disease: 1331
+    combined: 1440
+  expected_relation_pairs:
+    DD: 1145
+    DGD: 258
+    DPD: 17759
+    DCD: 529

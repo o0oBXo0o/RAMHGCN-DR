@@ -1,0 +1,36 @@
+{
+  "dataset": "multiplex-drug-disease",
+  "reproduction_boundary": "versioned raw association, SMILES and HPOA snapshots",
+  "nodes": {"drugs": 492, "diseases": 201, "total": 693},
+  "features": {
+    "drug": {"method": "RDKit atom one-hot mean", "dimensions": 109},
+    "disease": {"method": "HPO information-content with L2 normalization", "dimensions": 1331},
+    "combined": {"shape": [693, 1440], "dtype": "float32"}
+  },
+  "relations": {"DD": 1145, "DGD": 258, "DPD": 17759, "DCD": 529},
+  "similarities": {
+    "drug": {"file": "DrugSimNet_PREDICT.txt", "source_rows": 175528, "source_entities": 593, "retained_rows": 120786, "filtered_rows": 54742, "retained_pairs": 120786, "model_entities": 492, "covered_model_entities": 492, "diagonal": 1.0},
+    "disease": {"file": "DiseaseSimNet_GeneNet.txt", "source_rows": 80696, "source_entities": 3222, "retained_rows": 1250, "filtered_rows": 79446, "retained_pairs": 1250, "model_entities": 201, "covered_model_entities": 149, "diagonal": 1.0}
+  },
+  "known_unique_pairs": 18729,
+  "unknown_candidate_pairs": 80163,
+  "files": {
+    "raw/associations/direct_drug_disease.csv": "5fb737582106b3d6d0bd912342533fc2f5f5cbc620cdad7c2523f9efd102b8d8",
+    "raw/associations/drug_targets.tsv": "29ac20352fc5728c095f87250549b4ddb2d6d96aff503851ae82a69d42dcd466",
+    "raw/associations/phenotype_genes.tsv": "494fcf2be52208e9d02b394f6b00b55ad56a72477c130a3cc400f7661cf3dc07",
+    "raw/associations/pathway_genes.tsv": "11d21372ba968e21e91f66bd315dd2eb5a414643c151c4a697d021101f52aef5",
+    "raw/associations/protein_complex_genes.tsv": "718e179528b49f2f6ed12226ff04f3cbfa5f44a83d06f1006033bb5291aeee34",
+    "raw/entities/diseases.tsv": "334f335ba9d991deca5c4f17ebbe243b83f743d1c4299627f21d97bf125e48e6",
+    "raw/features/drug_connectivity_smiles.tsv": "17227639ff1055154dfd1ab45f836f65e2abdce24d02d051151969f5f22ff601",
+    "raw/features/phenotype_annotations.hpoa": "5d7aedee5f6218e9952fceba5f883df2cc4a0c1938e55d8d2616c15c517964fb",
+    "raw/similarity/DrugSimNet_PREDICT.txt": "b37670f46aeafbce1ede3a5ed110f952766f3927761f9076f2662b0f65dbe2ae",
+    "raw/similarity/DiseaseSimNet_GeneNet.txt": "17ddf671d1b6793122f37ac3fe43a17e453ec5b9d1490f56b711d79816ac2a1f",
+    "processed/multiplex_graph.mat": "1650301137c47333c57d39e57a47d8886c39589ae79ef0db2dd5826fc5d51a76",
+    "processed/DrugDiseaseID_with_names.xlsx": "46ae11dc920a0089fb53447c14e2571beab62e603574a07191e30991b10e6602",
+    "processed/splits/train.txt": "f4f7de5006793b05433cc2411f2fb19086987cd40e486ac5a38aeecbd97c91fa",
+    "processed/splits/valid.txt": "3b1d75b60e32bebad03e4277cc36eb6494570b348798db41aa57d93b0a2a3054",
+    "processed/splits/test.txt": "f0998c0e522d5fc757c24c936a649d7e4119e4cdce27188e80404821a7f36e49",
+    "processed/splits/all_edges.txt": "5dfc9eff8bf98b9716ad85b4b93c1564e9758c829fb678c22676f1ca051ee1a9"
+  },
+  "data_terms": "Third-party source terms apply; see the repository README."
+}

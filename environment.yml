@@ -1,0 +1,19 @@
+name: ramhgcn
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.8.12
+  - numpy=1.21.2
+  - scipy=1.10.1
+  - pandas=1.5.3
+  - rdkit=2022.09.5
+  - scikit-learn=1.2.2
+  - pytorch=2.0.1
+  - pytorch-cuda=11.8
+  - pyyaml=6.0
+  - openpyxl=3.0.9
+  - pip
+  - pip:
+      - tqdm==4.67.1

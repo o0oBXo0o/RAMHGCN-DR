@@ -1,0 +1,51 @@
+project:
+  name: RAMHGCN
+  seed: 42
+  output_dir: outputs/main_experiment
+
+data:
+  mat_file: data/processed/multiplex_graph.mat
+  split_dir: data/processed/splits
+  mapping_file: data/processed/DrugDiseaseID_with_names.xlsx
+  relation_order: [DD, DGD, DPD, DCD]
+  expected_nodes: {drugs: 492, diseases: 201}
+  expected_relations: {DD: 1145, DGD: 258, DPD: 17759, DCD: 529}
+  similarity:
+    drug_file: data/raw/similarity/DrugSimNet_PREDICT.txt
+    disease_file: data/raw/similarity/DiseaseSimNet_GeneNet.txt
+    diagonal: 1.0
+    expected_source_rows: {drug: 175528, disease: 80696}
+    expected_source_entities: {drug: 593, disease: 3222}
+    expected_pairs: {drug: 120786, disease: 1250}
+    expected_covered_entities: {drug: 492, disease: 149}
+
+model:
+  embedding_dim: 256
+  relation_weighting: softmax
+  adjacency_normalization: none
+  self_loops: false
+
+training:
+  protocol: relation_wise_10cv
+  supervision_relations: [DD, DGD, DPD, DCD]
+  outer_folds: 10
+  epochs: 500
+  optimizer: AdamW
+  learning_rate: 0.0005
+  weight_decay: 0.02
+  checkpoint_metric: validation_auprc
+  adjacency_policy: full_multiplex_graph
+
+evaluation:
+  threshold_policy: validation_mcc
+  best_fold_metric: validation_auprc
+
+ranking:
+  enabled: true
+  top_k: 10
+  mask_known_positives: true
+  export_excel: true
+
+runtime:
+  device: auto
+  deterministic: true
