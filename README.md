@@ -4,12 +4,12 @@ RAMHGCN-DR implements a relation-adaptive graph representation learning framewor
 
 <p align="center">
   <img src="images/architecture.png"
-       alt="Overview of the RAMHGCN-DR framework"
+       alt="Overall architecture of the RAMHGCN-DR"
        width="800">
 </p>
 
 <p align="center">
-  <em>Overview of the RAMHGCN-DR framework</em>
+  <em>Overall architecture of the RAMHGCN-DR</em>
 </p>
 
 This repository contains the source code, fixed biomedical input snapshots, processed model inputs, configuration files, and command-line workflows for preprocessing, cross-validation, evaluation and ablation analysis. 
