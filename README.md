@@ -17,7 +17,7 @@ This repository contains the source code, fixed biomedical input snapshots, proc
 ## 1. Source-code organization
 
 ```text
-RAMHGCN/
+RAMHGCN-DR/
 ├── configs/
 │   ├── ramhgcn.yaml                 # Model, evaluation, and runtime settings
 │   └── preprocessing.yaml           # Raw inputs and feature/relation construction
@@ -66,10 +66,10 @@ RAMHGCN/
 
 ### Step 1 — Create an environment
 
-From the directory containing `RAMHGCN`, run:
+From the directory containing `RAMHGCN-DR`, run:
 
 ```bash
-cd RAMHGCN
+cd RAMHGCN-DR
 ```
 
 For the supplied Conda environment, which includes the CUDA 11.8 runtime:
