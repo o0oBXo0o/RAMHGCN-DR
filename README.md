@@ -1,15 +1,15 @@
 # RAMHGCN-DR: Relation-Adaptive Multiplex Heterogeneous Graph Convolutional Network for Drug Repurposing
 
-RAMHGCN implements a relation-adaptive graph representation learning framework for drug–disease association prediction and computational drug repositioning. It integrates direct drug–disease associations, three projected biomedical relation channels, molecular structure descriptors, phenotype annotations, and within-type similarity networks. The resulting node embeddings support relation-wise evaluation and the prioritization of previously unobserved drug–disease pairs.
+RAMHGCN-DR implements a relation-adaptive graph representation learning framework for drug–disease association prediction and computational drug repositioning. It integrates direct drug–disease associations, three projected biomedical relation channels, molecular structure descriptors, phenotype annotations, and within-type similarity networks. The resulting node embeddings support relation-wise evaluation and the prioritization of previously unobserved drug–disease pairs.
 
 <p align="center">
   <img src="images/architecture.png"
-       alt="Overview of the RAMHGCN framework"
+       alt="Overview of the RAMHGCN-DR framework"
        width="800">
 </p>
 
 <p align="center">
-  <em>Overview of the RAMHGCN framework</em>
+  <em>Overview of the RAMHGCN-DR framework</em>
 </p>
 
 This repository contains the source code, fixed biomedical input snapshots, processed model inputs, configuration files, and command-line workflows for preprocessing, cross-validation, evaluation and ablation analysis. 
